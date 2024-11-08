@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "61010606-9f10-45fa-891e-afa4c43647ad",
+		"name": "Library Management System API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/books",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/books/1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The theory of everything\",\r\n    \"author\": \"elias\",\r\n    \"publicationYear\": 2024,\r\n    \"isbn\": \"12345890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/books",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/books/2",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"books",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The theory of everything\",\r\n    \"author\": \"elias 2\",\r\n    \"publicationYear\": 2024,\r\n    \"isbn\": \"12345890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/books/1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "patrons",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/patrons",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"patrons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/patrons/0",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"patrons",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Elias 2\",\r\n    \"email\": \"elias2@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/patrons",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"patrons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/patrons/2",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"patrons",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Elias\",\r\n    \"email\": \"elias.m.shallouf@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/patrons/3",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"patrons",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "borrowing",
+			"item": [
+				{
+					"name": "borrow",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{API_URL}}/borrow/2/patron/1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"borrow",
+								"2",
+								"patron",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "return",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/return/2/patron/1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"return",
+								"2",
+								"patron",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
